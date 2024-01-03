@@ -5651,7 +5651,7 @@ class _SfDateRangePickerState extends State<_SfDateRangePicker>
     _isMobilePlatform =
         DateRangePickerHelper.isMobileLayout(Theme.of(context).platform);
     _fadeInController ??= AnimationController(
-        duration: Duration(milliseconds: _isMobilePlatform ? 500 : 600),
+        duration: Duration(milliseconds: _isMobilePlatform ? 250 : 300),
         vsync: this)
       ..addListener(_updateFadeAnimation);
     _fadeIn ??= Tween<double>(
@@ -9184,7 +9184,7 @@ class _PickerScrollViewState extends State<_PickerScrollView>
     /// returns the disable dates collection when right to left swiping
     _triggerSelectableDayPredicates(_getCurrentVisibleDates(true));
 
-    _animationController.duration = const Duration(milliseconds: 500);
+    _animationController.duration = const Duration(milliseconds: 250);
     _animationController
         .forward()
         .then<dynamic>((dynamic value) => _updateNextView());
@@ -9217,7 +9217,7 @@ class _PickerScrollViewState extends State<_PickerScrollView>
     /// returns the disable dates collection when left to right swiping
     _triggerSelectableDayPredicates(_getCurrentVisibleDates(false));
 
-    _animationController.duration = const Duration(milliseconds: 500);
+    _animationController.duration = const Duration(milliseconds: 250);
     _animationController
         .forward()
         .then<dynamic>((dynamic value) => _updatePreviousView());
